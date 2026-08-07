@@ -7,7 +7,9 @@
 
 A performance measurement system designed from first principles — for an organization where value is produced by teams, and the instrument measuring it is mostly noise.
 
-**→ [Read the full design](PERFORMANCE-MEASUREMENT-SYSTEM.md)** (~11,000 words)
+**→ [Read it as a designed page](https://claude.ai/code/artifact/93c47a12-b0ed-49b9-800c-8279f1bdc5f3)** — typeset, with diagrams, light and dark themes
+
+**→ [Read the source document](PERFORMANCE-MEASUREMENT-SYSTEM.md)** — the same content in Markdown, renders here on GitHub
 
 ---
 
@@ -72,7 +74,12 @@ The majority of a performance rating is about the person giving it. Organization
 
 ## Reading it
 
-The document is self-contained Markdown and renders on GitHub. It is long by design — a system this consequential deserves its reasoning shown rather than asserted.
+Two versions, same content:
+
+- **[The designed page](https://claude.ai/code/artifact/93c47a12-b0ed-49b9-800c-8279f1bdc5f3)** — typeset for reading, with the variance decomposition and the four-layer architecture drawn rather than described. Adapts to light and dark themes, and prints cleanly.
+- **[The Markdown source](PERFORMANCE-MEASUREMENT-SYSTEM.md)** — self-contained, renders on GitHub, diffable and quotable. This is the canonical copy.
+
+It is long by design — a system this consequential deserves its reasoning shown rather than asserted.
 
 If you want the short version, read **§1** (why one instrument fails), **§2.1** (the variance table), and **§9** (the differentiators). That is roughly 15 minutes and carries the argument.
 

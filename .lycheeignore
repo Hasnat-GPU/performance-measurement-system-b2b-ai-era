@@ -7,6 +7,11 @@ https://finance\.yahoo\.com/.*
 https://www\.yahoo\.com/.*
 https://www\.aol\.com/.*
 
+# The published artifact. It is a client-rendered page behind Cloudflare, so an
+# unauthenticated checker gets a challenge or an empty shell either way — a
+# result here would say nothing about whether the link actually works.
+https://claude\.ai/.*
+
 # Relative GitHub shortcuts (../../issues/...) that only resolve once rendered
 # on github.com, not on a local filesystem.
 ^\.\./\.\./.*
