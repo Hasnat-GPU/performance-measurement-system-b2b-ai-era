@@ -1,0 +1,55 @@
+cff-version: 1.2.0
+title: >-
+  The Performance Measurement System for B2B Software Companies
+  in the AI-Era
+message: >-
+  If you reference or build on this design, please cite it using
+  the metadata below.
+type: dataset
+abstract: >-
+  A performance measurement system designed from first principles.
+  It surveys the systems used at Google, Amazon, Netflix, Apple,
+  Meta, Microsoft and Deloitte/Adobe with an explicit adopt/reject
+  decision for each, then specifies a four-layer architecture that
+  decouples development signal from compensation decisions. The
+  design responds to two findings convention ignores: that the four
+  purposes of a performance system have contradictory information
+  requirements, and that the majority of variance in a performance
+  rating is attributable to the rater rather than the person rated.
+authors:
+  - given-names: Hasnat
+    alias: Hasnat-GPU
+version: 1.0.0
+date-released: 2026-08-07
+license: CC-BY-4.0
+repository-code: >-
+  https://github.com/Hasnat-GPU/performance-measurement-system-b2b-ai-era
+keywords:
+  - performance management
+  - organizational design
+  - team assessment
+  - psychological safety
+  - rater bias
+  - compensation design
+  - measurement theory
+references:
+  - type: article
+    title: Understanding the latent structure of job performance ratings
+    authors:
+      - family-names: Scullen
+        given-names: Steven E.
+      - family-names: Mount
+        given-names: Michael K.
+      - family-names: Goff
+        given-names: Maynard
+    journal: Journal of Applied Psychology
+    year: 2000
+  - type: article
+    title: Reinventing Performance Management
+    authors:
+      - family-names: Buckingham
+        given-names: Marcus
+      - family-names: Goodall
+        given-names: Ashley
+    journal: Harvard Business Review
+    year: 2015

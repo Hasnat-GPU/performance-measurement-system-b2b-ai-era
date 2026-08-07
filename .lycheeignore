@@ -1,0 +1,12 @@
+# Hosts that block automated requests outright, so a failure here tells us
+# nothing about whether the link actually works in a browser.
+https://hbr\.org/.*
+https://store\.hbr\.org/.*
+https://www\.forbes\.com/.*
+https://finance\.yahoo\.com/.*
+https://www\.yahoo\.com/.*
+https://www\.aol\.com/.*
+
+# Relative GitHub shortcuts (../../issues/...) that only resolve once rendered
+# on github.com, not on a local filesystem.
+^\.\./\.\./.*

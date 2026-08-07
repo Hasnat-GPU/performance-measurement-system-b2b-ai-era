@@ -1,0 +1,66 @@
+name: Correction
+description: A fact, figure, citation, or description of company practice is wrong.
+title: '[Correction] '
+labels: ['correction', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: >
+        Thank you — factual accuracy is what the argument rests on. If the fix
+        is obvious and you'd rather just send a patch, a pull request is
+        welcome instead.
+
+  - type: input
+    id: location
+    attributes:
+      label: Where is it?
+      description: Section number, or the file and line.
+      placeholder: '§3.2, "Amazon — Leadership Principles"'
+    validations:
+      required: true
+
+  - type: textarea
+    id: current
+    attributes:
+      label: What it currently says
+      description: Quote the text as written.
+      render: markdown
+    validations:
+      required: true
+
+  - type: textarea
+    id: correct
+    attributes:
+      label: What it should say
+    validations:
+      required: true
+
+  - type: textarea
+    id: source
+    attributes:
+      label: Source
+      description: >-
+        A link or citation. **Please include the date** — reported company
+        practice changes fast, and §3 is the section most likely to go stale.
+    validations:
+      required: true
+
+  - type: dropdown
+    id: severity
+    attributes:
+      label: Does this change the argument?
+      options:
+        - 'No — typo, formatting, or broken link'
+        - 'Minor — the detail is wrong but the conclusion stands'
+        - 'Yes — a conclusion in this section depends on it'
+        - 'Significant — it affects reasoning elsewhere in the document'
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Before submitting
+      options:
+        - label: I agree to follow this project's Code of Conduct.
+          required: true

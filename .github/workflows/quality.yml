@@ -1,0 +1,78 @@
+name: Quality
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+# Least privilege: this workflow only reads the repository.
+permissions:
+  contents: read
+
+concurrency:
+  group: quality-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  markdown:
+    name: Lint Markdown
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        # actions/checkout v7.0.1 — pinned to a full SHA so a retagged
+        # upstream release cannot silently change what runs here.
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Run markdownlint
+        # DavidAnson/markdownlint-cli2-action v24.2.0
+        uses: DavidAnson/markdownlint-cli2-action@21c1be1b93ad9ed58fa840aacc3f279cde2a72ff
+        with:
+          globs: |
+            **/*.md
+            !node_modules
+
+  metadata:
+    name: Validate citation metadata
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Validate CITATION.cff
+        run: |
+          python -m pip install --quiet cffconvert
+          cffconvert --validate --infile CITATION.cff
+
+  hygiene:
+    name: Repository hygiene
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Required community files are present
+        run: |
+          missing=0
+          for f in README.md LICENSE CONTRIBUTING.md CODE_OF_CONDUCT.md \
+                   SECURITY.md CHANGELOG.md CITATION.cff .gitignore .gitattributes; do
+            if [ ! -f "$f" ]; then
+              echo "::error file=$f::Required community file is missing"
+              missing=1
+            fi
+          done
+          exit $missing
+
+      - name: No unpinned third-party actions
+        run: |
+          # Every `uses:` that is not a first-party actions/* reference must
+          # be pinned to a 40-character commit SHA.
+          if grep -rnE '^\s*uses:\s+[^ ]+@(v[0-9]|main|master)' .github/workflows/; then
+            echo "::error::Found an action pinned to a moving tag. Pin to a full commit SHA."
+            exit 1
+          fi
+          echo "All actions are SHA-pinned."

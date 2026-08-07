@@ -1,0 +1,33 @@
+# Normalize line endings so the repo stores LF regardless of contributor OS.
+# This is what silences the "LF will be replaced by CRLF" warning on Windows.
+* text=auto eol=lf
+
+# Explicit text types
+*.md      text eol=lf diff=markdown
+*.yml     text eol=lf
+*.yaml    text eol=lf
+*.json    text eol=lf
+*.cff     text eol=lf
+*.txt     text eol=lf
+LICENSE   text eol=lf
+.editorconfig text eol=lf
+
+# Windows-only files keep CRLF
+*.bat     text eol=crlf
+*.cmd     text eol=crlf
+*.ps1     text eol=crlf
+
+# Binary — never diff or normalize
+*.png     binary
+*.jpg     binary
+*.jpeg    binary
+*.gif     binary
+*.pdf     binary
+*.woff2   binary
+
+# Keep housekeeping files out of GitHub's language statistics and
+# out of release archives.
+.github/**       export-ignore linguist-documentation
+.editorconfig    export-ignore
+.gitattributes   export-ignore
+.gitignore       export-ignore

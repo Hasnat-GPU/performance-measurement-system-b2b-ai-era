@@ -1,0 +1,86 @@
+name: Challenge a claim or decision
+description: A premise, inference, or design decision doesn't hold up.
+title: '[Challenge] '
+labels: ['challenge', 'needs-triage']
+body:
+  - type: markdown
+    attributes:
+      value: >
+        This document is meant to be argued with — §14 says so explicitly. The
+        most useful challenges name a specific claim rather than a general
+        disagreement, so please quote the passage you're contesting.
+
+  - type: input
+    id: section
+    attributes:
+      label: Which section?
+      description: Section number and heading, e.g. "§6.3 — Rater fingerprinting".
+      placeholder: '§'
+    validations:
+      required: true
+
+  - type: textarea
+    id: claim
+    attributes:
+      label: The claim you're challenging
+      description: Quote it directly, so we're arguing about the same sentence.
+      render: markdown
+    validations:
+      required: true
+
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of problem is it?
+      options:
+        - The premise is wrong
+        - The premise holds but the inference doesn't follow
+        - The reasoning is sound but the mechanism fails in practice
+        - The mechanism works but has an unstated cost or failure mode
+        - It conflicts with another part of the document
+        - Contrary evidence exists
+    validations:
+      required: true
+
+  - type: textarea
+    id: argument
+    attributes:
+      label: Your argument
+      description: >-
+        Why does it fail? A concrete case where the mechanism produces a bad
+        outcome is worth more than an abstract objection.
+    validations:
+      required: true
+
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Supporting evidence
+      description: >-
+        Research, field data, or documented company practice. Please date
+        anything about how a specific company currently operates — those
+        change fast.
+    validations:
+      required: false
+
+  - type: textarea
+    id: alternative
+    attributes:
+      label: What would you put in its place?
+      description: Optional, but it moves the conversation forward.
+    validations:
+      required: false
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Before submitting
+      options:
+        - label: I've read the section I'm challenging in full, in context.
+          required: true
+        - label: >-
+            My argument doesn't rest on "no company does this" — the design
+            rejects several near-universal practices on purpose, and says why.
+          required: true
+        - label: I agree to follow this project's Code of Conduct.
+          required: true

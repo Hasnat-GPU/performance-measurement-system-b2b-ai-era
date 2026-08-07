@@ -1,0 +1,54 @@
+name: Links
+
+# Link rot is a maintenance problem, not a reason to block someone's pull
+# request — so this runs on a schedule and on demand, never as a PR gate.
+on:
+  schedule:
+    # 07:00 UTC every Monday
+    - cron: '0 7 * * 1'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+concurrency:
+  group: links
+  cancel-in-progress: false
+
+jobs:
+  check:
+    name: Check external links
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Check out repository
+        # actions/checkout v7.0.1
+        uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1
+
+      - name: Run lychee
+        id: lychee
+        # lycheeverse/lychee-action v2.9.0
+        uses: lycheeverse/lychee-action@e7477775783ea5526144ba13e8db5eec57747ce8
+        with:
+          # 429 = rate limited, 403 = bot-blocked. Neither means the link is dead.
+          args: >-
+            --no-progress
+            --max-retries 2
+            --timeout 20
+            --accept 200,206,403,429
+            --exclude-mail
+            './**/*.md'
+          fail: false
+          output: lychee-report.md
+
+      - name: Open an issue when links break
+        if: steps.lychee.outputs.exit_code != 0
+        # peter-evans/create-issue-from-file v6.0.0
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710
+        with:
+          title: 'Broken links detected in the weekly check'
+          content-filepath: lychee-report.md
+          labels: |
+            maintenance
+            broken-link

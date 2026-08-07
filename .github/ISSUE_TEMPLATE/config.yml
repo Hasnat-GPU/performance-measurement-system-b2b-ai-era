@@ -1,0 +1,20 @@
+blank_issues_enabled: false
+
+contact_links:
+  - name: Ask a question or discuss the design
+    url: https://github.com/Hasnat-GPU/performance-measurement-system-b2b-ai-era/discussions
+    about: >-
+      For open-ended questions, "how would this work at my company", or
+      thinking out loud. Issues are for corrections and challenges.
+
+  - name: Read the contributing guide first
+    url: https://github.com/Hasnat-GPU/performance-measurement-system-b2b-ai-era/blob/main/CONTRIBUTING.md
+    about: >-
+      It explains the difference between a correction and a challenge, and
+      what makes each one land.
+
+  - name: Report a security issue privately
+    url: https://github.com/Hasnat-GPU/performance-measurement-system-b2b-ai-era/security/advisories/new
+    about: >-
+      Workflow permissions, leaked credentials, or supply-chain concerns.
+      Please do not open a public issue for these.

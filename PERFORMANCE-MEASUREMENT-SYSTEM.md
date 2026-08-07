@@ -28,6 +28,7 @@ Version 1.0 · Design document · August 2026
 ---
 
 <a name="0-the-organization-this-is-designed-for"></a>
+
 ## 0. The organization this is designed for
 
 No design is portable without knowing its load. I am designing for a specific organization, and stating it plainly so every decision below can be checked against it.
@@ -55,6 +56,7 @@ Scaling notes for 50 / 500 / 5,000 people appear in [§12](#12-cost-model-and-sc
 ---
 
 <a name="1-what-a-performance-system-is-actually-for"></a>
+
 ## 1. What a performance system is actually for (and why one instrument cannot do it)
 
 Start by refusing the usual framing. A performance system is not "a way to evaluate people." That is a description of a mechanism, not a purpose. Purposes are these four, and they are irreducible — an organization needs all of them:
@@ -86,6 +88,7 @@ Read the conflicts. Learning requires the lowest possible stakes, because a pers
 ---
 
 <a name="2-the-measurement-problem-nobody-designs-around"></a>
+
 ## 2. The measurement problem nobody designs around
 
 Before designing an instrument, it is worth asking how good the standard instrument is. The answer is bracing.
@@ -129,6 +132,7 @@ So Meridian evaluates **decisions on the quality of the process and the informat
 ---
 
 <a name="3-field-survey"></a>
+
 ## 3. Field survey: what the big companies do, and what survives contact with evidence
 
 For each system: the mechanism, what it is genuinely good at, where it breaks, and the explicit transfer decision for Meridian.
@@ -140,12 +144,14 @@ For each system: the mechanism, what it is genuinely good at, where it breaks, a
 Google announced changes taking effect in the 2026 compensation cycle: managers may award the coveted *Outstanding Impact* rating to more people, funded — explicitly, "budget-neutral" — by lowering the multipliers for the *Significant* and *Moderate Impact* middle tiers. Reported knock-on effects: the share of employees landing in the lowest category rises from roughly 2% to as much as 6%, while the share in the top two tiers falls from about 27% to about 22%.
 
 **Strengths.**
+
 - OKRs, used properly, separate ambitious goal-setting from evaluation. Setting a target you expect to miss is only rational if missing it is not punished.
 - Genuine investment in evidence-based management: Project Oxygen (what makes managers effective) and Project Aristotle (what makes teams effective) are real research, and Aristotle's psychological-safety finding is one of the most useful results in the field.
 - Calibration committees do reduce single-manager idiosyncrasy — the exact error identified in §2.1.
 - "Impact" as the unit of assessment is better than effort, hours, or output volume.
 
 **Weaknesses.**
+
 - **The rating distribution is set by the compensation budget.** The 2026 change is the tell: the tiers were re-cut and the multipliers re-weighted to keep total spend flat. That means the tier is not a measurement of the person; it is a share of a fixed pool wearing measurement's clothes. Two people doing identical work in different years receive different labels because the budget changed. Once employees work this out — and they do — the rating loses its power to inform, while keeping all of its power to demoralize.
 - The separate promotion packet creates a well-documented distortion: people select work for its *legibility to a promotion committee* rather than its value to the company. Unglamorous, critical work — maintenance, enablement, reliability — becomes career-negative.
 - Committee calibration adds a political layer in which an employee's outcome depends materially on whether their manager argues well in a room the employee cannot enter.
@@ -157,11 +163,13 @@ Google announced changes taking effect in the 2026 compensation cycle: managers 
 **Mechanism.** Sixteen Leadership Principles as a shared behavioral vocabulary. Forte as the feedback tool. Organization and Leadership Review (OLR) talent calibration twice yearly, roughly Q1 and Q3. A corporate **Unregretted Attrition** target — the percentage of employees the company would like to see leave, voluntarily or otherwise — reported at around 6%. Underperformers enter **Focus** (a coaching plan of one to three months) and, on failing it, **Pivot**: choose severance or an improvement plan with hard deadlines.
 
 **Strengths.**
+
 - The Leadership Principles are the single most underrated mechanism in this survey. A shared, concrete, memorized behavioral vocabulary directly attacks the rater-variance problem from §2.1: when every rater is describing the same named constructs with the same examples, their idiosyncratic mental models converge. This is real measurement engineering, whether or not Amazon frames it that way.
 - The writing culture (six-pagers, narrative memos) produces durable, timestamped evidence of thinking as a byproduct of doing the work — the cheapest performance data there is.
 - "Unregretted" is a genuinely useful mental frame *as a question*: would we be sorry if this person left?
 
 **Weaknesses.**
+
 - **URA is a quota on human outcomes, and a quota inverts measurement.** The target — 6% must go — exists before any data is collected. That is Campbell's law implemented as policy. Documents obtained by the *Seattle Times* describe software-supported processes for hitting turnover targets among low-ranked office staff that closely resemble stack ranking, despite the company's denials.
 - The predictable second-order effect of a quota is defensive hiring: managers described as hiring people they intend to sacrifice to the number. Any system that makes it rational to hire someone in order to fire them has a defect no amount of tuning fixes.
 - A standing exit quota is the direct antagonist of psychological safety, which Aristotle identifies as the strongest predictor of team performance. The organization is spending on one hand what it takes with the other.
@@ -173,11 +181,13 @@ Google announced changes taking effect in the 2026 compensation cycle: managers 
 **Mechanism.** No formal performance reviews; the CTO has stated so publicly. An annual 360 as a safety net, framed explicitly as developmental — colleagues name what to *start, stop, continue*. Continuous informal candor. The **Keeper Test**: a manager asks whether they would fight to keep this person if they resigned today; if not, the person is offered generous severance and exits. Compensation is top-of-market, all-cash, set against the person's external market value, with no bonus and no rating-driven multiplier.
 
 **Strengths.**
+
 - This is the purest existing implementation of the thesis in §1 and §2.1. Netflix looked at the low-precision instrument and *removed it* rather than adding decimal places, replacing it with high-frequency candor plus a single, coarse, binary decision. **Coarse decisions tolerate noisy inputs.** A bathroom scale can answer "more than a ton."
 - Paying top-of-market in cash decouples compensation from the measurement cycle entirely. If money is settled and generous, the rating no longer has to carry it — which removes the main reason both parties lie during reviews. This is the most important idea in the survey and Meridian takes it.
 - Severance is treated as a cost of running a demanding standard, not as a punishment. Exits are fast, funded, and unstigmatized.
 
 **Weaknesses.**
+
 - **The Keeper Test is an instrument of fear, and fear is expensive.** It manufactures permanent, unresolvable job insecurity by design. This suppresses exactly the behaviors psychological safety produces — dissent, admission of error, unpopular risk-taking, asking for help. Netflix pays for a highly capable workforce and then installs the one mechanism most likely to make that workforce hide its problems.
 - There is **no development pathway**. You are kept or you are paid to leave. This externalizes talent development onto the labor market, which works only if you can always buy fully-formed senior people. It is structurally hostile to anyone early in career, anyone returning from leave, and anyone whose contribution is real but slow to become legible.
 - It makes a single manager's idiosyncratic preferences maximally consequential, with no calibration and no appeal — the §2.1 error at maximum stakes and minimum correction.
@@ -189,12 +199,14 @@ Google announced changes taking effect in the 2026 compensation cycle: managers 
 **Mechanism.** A functional organization in which leaders are domain experts rather than general managers — "experts leading experts." Every consequential piece of work has a **DRI**, a single Directly Responsible Individual. Reviews run semi-annually plus an end-of-year cycle; each employee is reviewed by three or four executives in addition to peers and direct reports, against **teamwork, innovation, and results**. Feedback is written free-form, without a numeric scale. Compensation is discretionary and equity-weighted. The whole process is opaque from outside and largely from inside.
 
 **Strengths.**
+
 - **Expert evaluation is the highest-leverage and least-discussed variable in performance measurement.** The accuracy ceiling of any assessment is set by whether the evaluator can recognize good work in that domain. A manager who cannot read the code, the design, or the model cannot distinguish excellent from adequate, and will fall back on proxies — confidence, visibility, hours, likeability — which is precisely how rater variance enters. Apple's structure attacks the problem at its source instead of correcting for it downstream.
 - Free-form writing refuses false precision. A written paragraph cannot be averaged into a spurious 3.4, and it forces the evaluator to produce reasons rather than a number.
 - DRI eliminates diffusion of responsibility — the failure mode in which a project has six contributors and no owner, and post-hoc attribution becomes impossible.
 - Three axes including *teamwork* and *innovation* alongside *results* is broader than most, and specifically funds behavior that pure results-measurement destroys.
 
 **Weaknesses.**
+
 - **Opacity is the fatal flaw.** With no published ladder and no published criteria, employees cannot self-assess, cannot direct their own development, and cannot tell whether an outcome was earned or arbitrary. Worse, no one can audit for bias — an unpublished, discretionary, executive-judgment system is exactly the environment in which demographic disparities accumulate invisibly and undisprovably.
 - It scales through the personal judgment of a small number of leaders, which travels badly and creates single points of failure.
 - Secrecy blocks internal learning: teams cannot see what excellence looked like elsewhere in the company.
@@ -206,10 +218,12 @@ Google announced changes taking effect in the 2026 compensation cycle: managers 
 **Mechanism.** PSC twice yearly, January and July, heavy on peer review. Ratings drive the individual bonus multiplier, equity refresh size, and salary movement directly. In January 2025 the company terminated roughly 5% of staff as low performers. For the following cycle, the mandated share of employees to be placed in the "below expectations" tier rose from 12–15% to **15–20%** for teams of 150 or more.
 
 **Strengths.**
+
 - Peer input at scale, which is at least a partial answer to single-rater noise.
 - Unusual honesty about what the rating is *for*. Meta does not pretend the rating is developmental; it says plainly that it determines money. Given the conflicts in §1, an honest allocation instrument is better than a dishonest hybrid.
 
 **Weaknesses.**
+
 - A mandated bottom bucket applied to a noisy instrument does not select the weakest performers. It selects on **rater severity, team difficulty, tenure-in-team, and visibility** — because those are the variables with the most variance in the measurement, per §2.1. A person can be moved into the bottom bucket by joining a strong team.
 - A six-month cycle with direct money consequences systematically punishes long-horizon work. Rational response: choose projects that finish inside the window.
 - Applying the quota only to teams of 150+ reveals that it is an aggregate budgeting device, not a judgment about individuals.
@@ -221,10 +235,12 @@ Google announced changes taking effect in the 2026 compensation cycle: managers 
 **Mechanism.** Microsoft abandoned stack ranking in November 2013 after concluding it damaged collaboration and innovation, replacing it with **Connects** — flexible, continuous check-ins — and a manager standard of "model, coach, care." Impact is assessed on three dimensions: your own work, your **contribution to others' work**, and your **leverage of others' work**. Rewards run on a 0–200 scale. In 2025 the company tightened: a formalized global PIP with a Global Voluntary Separation Agreement alternative available year-round, a two-year rehire ban for anyone exiting with a low rating or during a PIP, and a bar on internal transfers for low-rated employees still at the company — after terminating roughly 2,000 people for performance without severance.
 
 **Strengths.**
+
 - **The 2013 reversal is the most valuable natural experiment in this entire field.** A very large company ran forced ranking for years, concluded it damaged the business, and successfully exited it. When someone proposes stack ranking, this is the evidence that the burden of proof is on them.
 - The three impact dimensions are excellent and Meridian takes them nearly intact. *Contribution to others* and *leverage of others* explicitly pay people for making colleagues better — which is exactly the behavior forced ranking destroys, and exactly the behavior a team-based organization runs on.
 
 **Weaknesses.**
+
 - The 2025 re-tightening demonstrates the field's central political dynamic: under margin pressure, organizations regress toward punitive measurement, because it is cheap and looks decisive. Any design that does not anticipate this pressure will not survive it.
 - **The internal-transfer bar is actively counterproductive.** Poor fit between a person and a role is one of the most common causes of low performance and the cheapest to fix. Blocking transfer removes the least expensive remedy and converts a solvable placement problem into an expensive termination and rehire. It optimizes the appearance of rigor over the economics of it.
 
@@ -260,6 +276,7 @@ Google announced changes taking effect in the 2026 compensation cycle: managers 
 ---
 
 <a name="4-design-principles"></a>
+
 ## 4. Design principles
 
 Each principle states what it is derived from, so it can be argued with rather than merely obeyed.
@@ -306,9 +323,10 @@ Each principle states what it is derived from, so it can be argued with rather t
 ---
 
 <a name="5-system-architecture"></a>
+
 ## 5. System architecture: four decoupled layers
 
-```
+```text
 ┌──────────────────────────────────────────────────────────────────────────┐
 │  LAYER 1 — SENSING                          continuous · ZERO stakes     │
 │  Contribution Ledger · Signal Pulses · Team Telemetry · Recognition      │
@@ -345,6 +363,7 @@ Each principle states what it is derived from, so it can be argued with rather t
 ---
 
 <a name="6-question-1"></a>
+
 ## 6. Question 1 — The comprehensive team assessment method
 
 > *"What is your comprehensive team assessment method?"*
@@ -364,6 +383,7 @@ An append-only, employee-owned record. Its purpose is to convert assessment from
 - **Appended by others**: peer recognition (§8.2) and Signal Pulse free-text land here automatically.
 
 **Rules.**
+
 1. The ledger belongs to the employee. Nothing may enter the judgment layer that the employee cannot see.
 2. Ledger *volume* is never a metric. A prolific ledger and a sparse one are both fine; the ledger is a retrieval aid, not a scoreboard. (Volume-as-metric is the obvious Goodhart failure here, and it is closed explicitly.)
 3. The ledger replaces the promotion packet entirely. Nobody at Meridian writes a document arguing for their own promotion.
@@ -513,6 +533,7 @@ This does not eliminate rater variance. Nothing does. It converts a known, large
 Almost every performance system in existence reports a point estimate from a noisy instrument with no error bar and then acts on it as though it were precise. Making uncertainty a first-class, published output is the honest engineering response to §2.1, and it costs the organization only the cases it was going to get wrong anyway.
 
 **Two independent flags**, separate from the band because they are separate questions:
+
 - **Promotion-ready** — operating at the next level (see §7.1)
 - **Retention risk** — likely to leave, and we would regret it (see §8.1)
 
@@ -555,6 +576,7 @@ That last step is the whole design in miniature: the system noticed, and the org
 ---
 
 <a name="7-question-2"></a>
+
 ## 7. Question 2 — The strategic elevation plan
 
 > *"What is your strategic elevation plan?"*
@@ -676,6 +698,7 @@ An **Off-track** band with **High** confidence triggers this sequence, in this o
 ---
 
 <a name="8-question-3"></a>
+
 ## 8. Question 3 — The recognition and reward system
 
 > *"What is your recognition and reward system?"*
@@ -786,6 +809,7 @@ It is imperfect. Counterfactuals are unverifiable and the mechanism can be infla
 ---
 
 <a name="9-added-features"></a>
+
 ## 9. Added features: the twelve differentiators
 
 Consolidated, with what each fixes. These are the elements not found in the systems surveyed in §3.
@@ -829,6 +853,7 @@ That last row deserves the final word. If an organization's performance system i
 ---
 
 <a name="10-failure-modes"></a>
+
 ## 10. Failure modes and the defenses against them
 
 Designed defensively: for each known failure mode, the mechanism that produces it, the defense, and the meta-metric that detects the defense failing.
@@ -851,6 +876,7 @@ Designed defensively: for each known failure mode, the mechanism that produces i
 ---
 
 <a name="11-what-this-system-refuses-to-do"></a>
+
 ## 11. What this system refuses to do
 
 Stated explicitly, because a design is defined as much by its exclusions, and because these are the things that will be proposed again the first time margins tighten.
@@ -869,6 +895,7 @@ Stated explicitly, because a design is defined as much by its exclusions, and be
 ---
 
 <a name="12-cost-model-and-scaling"></a>
+
 ## 12. Cost model and scaling
 
 ### Cost at 450 people
@@ -896,6 +923,7 @@ For comparison: Deloitte measured its pre-redesign system at roughly 2 million h
 ---
 
 <a name="13-implementation-roadmap"></a>
+
 ## 13. Implementation roadmap, with kill criteria
 
 Rolled out as an experiment with a control group, because a performance system that has not been tested is an assertion.
@@ -925,6 +953,7 @@ Scrap or substantially rebuild if, after two full cycles:
 ---
 
 <a name="14-honest-limitations"></a>
+
 ## 14. Honest limitations
 
 Where this design is weak, stated plainly.
@@ -948,9 +977,11 @@ Where this design is weak, stated plainly.
 ---
 
 <a name="sources"></a>
+
 ## Sources
 
 **Research**
+
 - Scullen, S. E., Mount, M. K., & Goff, M. (2000). *Understanding the latent structure of job performance ratings.* Journal of Applied Psychology — [Semantic Scholar](https://www.semanticscholar.org/paper/Understanding-the-latent-structure-of-job-ratings.-Scullen-Mount/0a73fb7d291a407656d4ee4a9b1eb19514abe157)
 - [Manifestation of idiosyncratic rater effect in employee performance appraisal](https://businessperspectives.org/images/pdf/applications/publishing/templates/article/assets/13975/PPM_2020_03_Paramesh.pdf) — Problems and Perspectives in Management
 - Buckingham, M., & Goodall, A. (2015). [Reinventing Performance Management](https://hbr.org/2015/04/reinventing-performance-management) — Harvard Business Review
@@ -959,6 +990,7 @@ Where this design is weak, stated plainly.
 - [How Apple Is Organized for Innovation](https://www.apple.com/careers/pdf/HBR_How_Apple_Is_Organized_For_Innovation-4.pdf) — HBR, hosted by Apple
 
 **Company practice**
+
 - [Google overhauls performance ratings to sharpen focus on high achievers](https://www.hrkatha.com/news/google-overhauls-performance-ratings-to-sharpen-focus-on-high-achievers/) — HRKatha
 - [Google's New Performance Review System Promises Huge Bonuses For High Achievers](https://allwork.space/2025/04/googles-new-performance-review-system-promises-huge-bonuses-for-high-achievers/) — Allwork
 - [Understanding Amazon Forte & OLR Performance Review](https://agilityportal.io/blog/understanding-amazon-forte-olr-performance-review) — AgilityPortal
